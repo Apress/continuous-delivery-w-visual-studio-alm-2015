@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?define VERSION=!(bind.FileVersion.QBoxBackOfficeExe)?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+	<Product Id="*" 
+           Name="QBox.BackOffice.Installer" 
+           Language="1033" 
+           Version="$(var.VERSION)" 
+           Manufacturer="QuizBox International" 
+           UpgradeCode="6ef49cb0-e881-4a97-bc20-2cf9b1e7b361">
+	
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes"/>
+
+		<Feature Id="ProductFeature" Title="QBox.BackOffice.Installer" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="QBox.BackOffice.Installer" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">			
+			<Component Id="ProductComponent" Guid="{AD83D0BB-B16B-4E0A-9069-50D55BD19F10}">
+        <File Id="QBoxBackOfficeExe" Source="..\QBox.BackOffice\bin\$(var.Configuration)\QBox.BackOffice.exe" 
+              Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="QBoxBackOfficeExeConfig" Source="..\QBox.BackOffice\bin\$(var.Configuration)\QBox.BackOffice.exe.config"
+              Vital="yes" KeyPath="no" DiskId="1"/>
+			</Component> 
+		</ComponentGroup>
+	</Fragment>
+</Wix>

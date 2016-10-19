@@ -1,0 +1,43 @@
+﻿@model QBox.Web.Models.QuizResultModel
+@{
+    ViewBag.Title = "All questions answered";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+<div class="col-md-12">
+        @using (Html.BeginForm("PostScore", "Question", FormMethod.Post, new { role = "form" }))
+        {
+            @Html.HiddenFor(m => m.GameId)
+
+            <div class="well row-centered">
+                <h2>You have answered all questions!</h2>
+            </div>
+            <div class="well gameresult row-centered">
+                <h2>You scored @Model.NrCorrectAnswers out of @Model.TotalNrQuestions</h2>
+                <div class="well-sm verdict">
+                    @Model.Verdict
+                </div>
+            </div>
+            <div class="well">
+                <div class="form-group">
+                    <h4>Enter your name and post your score</h4>
+                </div>
+                <div class="form-group">
+                    <label for="name">Namn:</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                @Html.ValidationMessageFor(m => m.Name)
+                <div class="form-group">
+                    <button type="submit" id="postScore" class="btn btn-lg btn-info">Post score</button>
+                    <a class="btn btn-info btn-lg btn-newgame" href="/Category">New game</a>
+                </div>
+                
+                <div class="clearfix"></div>
+            </div>
+        }
+
+        
+</div>
+</div>
+

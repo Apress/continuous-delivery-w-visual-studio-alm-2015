@@ -1,0 +1,49 @@
+﻿@model QBox.Web.Models.QuizQuestionViewModel
+@{
+    ViewBag.Title = "Quiz Question";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="well">
+            <div class="row-centered">
+                <h2>Question <code>@Model.QuestionNr</code> of <code>@Model.QuestionsTotalNr</code> in category <button class="btn btn-lg btn-info">@Model.Category</button></h2>
+            </div>
+        </div>
+        @using (Html.BeginForm("PostAnswer", "Question", FormMethod.Post, new { role = "form" }))
+        {
+
+            @Html.HiddenFor(m => m.Id)
+            @Html.HiddenFor(m => m.QuestionNr)
+            @Html.HiddenFor(m => m.QuestionsTotalNr)
+            @Html.HiddenFor(m => m.GameId)
+            @Html.HiddenFor(m => m.Category)
+
+            <div class="form-group">
+                <div class="well">
+                    <div class="row-centered well question">
+                            @Model.Question?
+                    </div>
+                    <div class="well answers">
+                        @foreach (var a in Model.Answers)
+                        {
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButtonFor(m => m.SelectedAnswer, a.Id, new {@class="quiz-radio"})
+                                    @Html.Label(a.Id.ToString(), a.AnswerText)
+                                </label>
+                            </div>
+                        }
+
+                        @Html.ValidationMessageFor(m => m.SelectedAnswer)
+                        <button type="submit" class="btn btn-lg btn-answer">Next</button>
+                        <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

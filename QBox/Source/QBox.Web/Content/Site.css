@@ -1,0 +1,108 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.btn-answer {
+    float: right;
+    background-color: chocolate;
+    font-size: large;
+    color: white;
+    min-width: 150px;
+}
+
+.btn-category {
+    min-width: 400px;
+}
+
+.btn-newgame {
+    float: right;
+}
+
+.list-categories .list-group-item {
+    border: 0px;
+}
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+    align-content: center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.question {
+    background-color: coral;
+    color: white;
+    font-size: x-large;
+}
+
+.gameresult {
+    background-color: coral;
+    color: white;
+    font-size: x-large;
+}
+
+.verdict {
+    background-color: white;
+    color: coral;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.answers {
+    background-color: white;
+    font-size: x-large;
+    padding-left: 50px;
+}
+
+.highscore {
+    font-size: medium;
+    background-color: white;
+    border: 0px;
+    border-color: red;
+}
+
+.highscore .badge {
+    font-size: large;
+}
+/* For small screen */
+.highscore .row:nth-child(even){
+  background-color: aliceblue;
+    border: 0px;
+}
+.highscore .row:nth-child(odd){
+  background-color: white;
+  border: 0px;
+}
+
+.quiz-radio {
+    width: 0.8em;
+    height: 0.8em;
+}

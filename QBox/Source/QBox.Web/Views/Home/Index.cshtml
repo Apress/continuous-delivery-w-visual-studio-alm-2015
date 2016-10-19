@@ -1,0 +1,50 @@
+﻿@using System.Reflection
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row row-centered">
+            <div class="col-md-8">
+                <h1>QuizBox</h1>
+                <p class="lead">QuizBox is the ultimate quiz challenge where you can compete against yourself and friends to determine who has the deepest trivia knowledge!</p>
+                <p>
+                    <a id="startGame" href="/Category" class="btn btn-primary btn-lg">Start New Quiz</a>
+                </p>
+            </div>
+            <div class="col-md4">
+                <img src="~/Content/Images/logo.jpg" class="img img-circle">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>View Highscores</h2>
+        <p>Check out the latest highscores from around the world!</p>
+        <p><a class="btn btn-info" href="/Highscore">View Highscores</a>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Manage Profile</h2>
+        <p>Update your profile and make sure that your contact information is up to date</p>
+        <p>
+            <a class="btn btn-info" href="http://go.microsoft.com/fwlink/?LinkId=301866">Manage Profile</a>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Help</h2>
+        <p>
+            Click below and you will learn everything about how QuizBox works
+        </p>
+        <p>
+            <a class="btn btn-info" href="http://go.microsoft.com/fwlink/?LinkId=301865">Show Help</a>
+        </p>
+    </div>
+</div>
+<div class="navbar navbar-fixed-bottom">
+        <div class="small text-center">Version @typeof(MvcApplication).Assembly.GetName().Version</div>
+
+</div>

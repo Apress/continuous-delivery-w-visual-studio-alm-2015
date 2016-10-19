@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="QBox.Logging.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="InstrumentationKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">7ff9a227-13d5-421b-90a8-fde6d05c492c</Value>
+    </Setting>
+    <Setting Name="CurrentEnvironment" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Dev</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

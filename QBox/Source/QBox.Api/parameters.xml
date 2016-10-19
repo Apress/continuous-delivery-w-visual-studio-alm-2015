@@ -1,0 +1,5 @@
+﻿<parameters>
+  <parameter name="InstrumentationKey" description="ApplicationInsights Instrumentatiton Key" defaultvalue="__INSTRUMENTATIONKEY__" tags="">
+    <parameterentry kind="XmlFile" scope="\\web.config$" match="/configuration/applicationSettings/QBox.Web.Properties.Settings/setting[@name='InstrumentationKey']/value/text()" />
+  </parameter>
+</parameters>

@@ -1,0 +1,51 @@
+﻿@model QBox.Web.Models.QuizCategoriesViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row row-centered">
+    <div class="col-md-8">
+        <div class="well">
+            <h2>Let's play a new Quiz Game!</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <h4>Start by selecting a category:</h4>
+                <div class="form-group">
+                    @using (Html.BeginForm("Start", "Category", FormMethod.Post, new { role = "form" }))
+                    {
+                        <div class="list-group list-categories">
+
+                            @foreach (var c in Model.Categories)
+                            {
+                                <div class="list-group-item">
+                                    <button type="submit" class="btn btn-lg btn-info btn-category" value="@c.Name" name="@c.Id">@c.Name</button>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <h4>Or, select one for me!</h4>
+                <div class="form-group">
+                    @using (Html.BeginForm("Random", "Category", FormMethod.Post, new { role = "form" }))
+                    {
+                        <button type="submit" class="btn">
+                            <img src="~/Content/Images/selectrandom.jpeg" class="img img-circle" width="128px">
+                        </button>
+                    }
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-4">
+        <div class="col-md4">
+            <img src="~/Content/Images/small-logo.jpg" class="img img-circle">
+        </div>
+    </div>
+</div>
